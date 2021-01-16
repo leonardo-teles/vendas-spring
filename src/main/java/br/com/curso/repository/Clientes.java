@@ -4,17 +4,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.curso.domain.Cliente;
 
 @Repository
 public class Clientes {
 
-	private static final String INSERT = "INSERT INTO clientes(nome) VALUES(?)";
 	private static final String SELECT_ALL = "SELECT * FROM clientes";
 	private static final String UPDATE = "UPDATE clientes SET nome = ? WHERE id = ?";
 	private static final String DELETE = "DELETE FROM clientes WHERE id = ?";
@@ -22,8 +24,12 @@ public class Clientes {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
+	@Autowired
+	private EntityManager entityManager;
+	
+	@Transactional
 	public Cliente salvar(Cliente cliente) {
-		jdbcTemplate.update(INSERT, new Object[] {cliente.getNome()} );
+		entityManager.persist(cliente);
 		
 		return cliente;
 	}
