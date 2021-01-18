@@ -1,0 +1,9 @@
+br/com/curso/repository/ItensPedido.class
+br/com/curso/domain/Produto.class
+br/com/curso/domain/Cliente.class
+br/com/curso/repository/Clientes.class
+br/com/curso/VendasApplication.class
+br/com/curso/domain/Pedido.class
+br/com/curso/repository/Produtos.class
+br/com/curso/domain/ItemPedido.class
+br/com/curso/repository/Pedidos.class
