@@ -1,13 +1,11 @@
 package br.com.curso.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.ExampleMatcher.StringMatcher;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -47,14 +45,18 @@ public class ClienteController {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Integer id) {
 		clientes.findById(id)
-			.map(cliente -> clientes.delete(cliente))
+			.map(cliente -> {
+				clientes.delete(cliente);
+				
+				return cliente;
+			})
 			.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado"));
 		
 	}
 	
 	@PutMapping("{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody Cliente cliente) {
+	public void update(@PathVariable Integer id, @RequestBody Cliente cliente) {
 		
 		clientes.findById(id).map(clienteExistente -> {
 			cliente.setId(clienteExistente.getId());
