@@ -14,6 +14,7 @@ import br.com.curso.domain.Pedido;
 import br.com.curso.domain.Produto;
 import br.com.curso.dto.ItemPedidoDTO;
 import br.com.curso.dto.PedidoDTO;
+import br.com.curso.enums.StatusPedido;
 import br.com.curso.exception.RegraNegocioException;
 import br.com.curso.repository.Clientes;
 import br.com.curso.repository.ItensPedido;
@@ -44,6 +45,7 @@ public class PedidoServiceImpl implements PedidoService {
 		pedido.setTotal(dto.getTotal());
 		pedido.setDataPedido(LocalDate.now());
 		pedido.setCliente(cliente);
+		pedido.setStatus(StatusPedido.REALIZADO);
 		
 		List<ItemPedido> itensPedido = converterItens(pedido, dto.getItens());
 		pedidos.save(pedido);
