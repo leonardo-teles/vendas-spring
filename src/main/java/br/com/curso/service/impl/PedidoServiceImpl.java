@@ -2,6 +2,7 @@ package br.com.curso.service.impl;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
@@ -69,6 +70,11 @@ public class PedidoServiceImpl implements PedidoService {
 			
 			return itemPedido;
 		}).collect(Collectors.toList());
+	}
+
+	@Override
+	public Optional<Pedido> obterPedidoCompleto(Integer id) {
+		return pedidos.findByIdFetchItensPedido(id);
 	}
 	
 }
