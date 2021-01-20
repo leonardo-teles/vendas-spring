@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,9 +20,11 @@ import org.springframework.web.server.ResponseStatusException;
 
 import br.com.curso.domain.ItemPedido;
 import br.com.curso.domain.Pedido;
+import br.com.curso.dto.AtualizacaoStatusPedidoDTO;
 import br.com.curso.dto.InformacaoItemPedidoDTO;
 import br.com.curso.dto.InformacoesPedidoDTO;
 import br.com.curso.dto.PedidoDTO;
+import br.com.curso.enums.StatusPedido;
 import br.com.curso.service.PedidoService;
 
 @RestController
@@ -45,6 +48,13 @@ public class PedidoController {
 	@GetMapping("{id}")
 	public InformacoesPedidoDTO getById(@PathVariable Integer id) {
 		return pedidoService.obterPedidoCompleto(id).map(p -> converter(p)).orElseThrow(() -> new ResponseStatusException(NOT_FOUND, "Pedido não encontrado"));
+	}
+	
+	@PatchMapping("{id}")
+	@ResponseStatus(NO_CONTENT)
+	public void updateStatus(@PathVariable Integer id, @RequestBody AtualizacaoStatusPedidoDTO dto) {
+		String novoStatus = dto.getNovoStatus();
+		pedidoService.atualizarStatus(id, StatusPedido.valueOf(novoStatus));
 	}
 	
 	private InformacoesPedidoDTO converter(Pedido pedido) {

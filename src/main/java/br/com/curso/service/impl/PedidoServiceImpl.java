@@ -15,6 +15,7 @@ import br.com.curso.domain.Produto;
 import br.com.curso.dto.ItemPedidoDTO;
 import br.com.curso.dto.PedidoDTO;
 import br.com.curso.enums.StatusPedido;
+import br.com.curso.exception.PedidoNaoEncontradoException;
 import br.com.curso.exception.RegraNegocioException;
 import br.com.curso.repository.Clientes;
 import br.com.curso.repository.ItensPedido;
@@ -55,6 +56,22 @@ public class PedidoServiceImpl implements PedidoService {
 		return pedido;
 	}
 	
+	@Override
+	public Optional<Pedido> obterPedidoCompleto(Integer id) {
+		return pedidos.findByIdFetchItensPedido(id);
+	}
+
+	@Override
+	@Transactional
+	public void atualizarStatus(Integer id, StatusPedido status) {
+		pedidos.findById(id).map(pedido -> {
+			pedido.setStatus(status);
+			
+			return pedidos.save(pedido);
+		}).orElseThrow(() -> new PedidoNaoEncontradoException());
+		
+	}
+	
 	private List<ItemPedido> converterItens(Pedido pedido, List<ItemPedidoDTO> itens) {
 		if (itens.isEmpty()) {
 			throw new RegraNegocioException("Não é possível realizar um pedido sem itens.");
@@ -73,10 +90,4 @@ public class PedidoServiceImpl implements PedidoService {
 			return itemPedido;
 		}).collect(Collectors.toList());
 	}
-
-	@Override
-	public Optional<Pedido> obterPedidoCompleto(Integer id) {
-		return pedidos.findByIdFetchItensPedido(id);
-	}
-	
 }
