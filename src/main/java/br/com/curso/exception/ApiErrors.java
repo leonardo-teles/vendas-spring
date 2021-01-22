@@ -9,8 +9,13 @@ public class ApiErrors {
 
 	@Getter
 	private List<String> erros;
-
+	
 	public ApiErrors(String msgErro) {
 		this.erros = Arrays.asList(msgErro);
+	}
+
+	public ApiErrors(List<String> erros) {
+		super();
+		this.erros = erros;
 	}
 }
