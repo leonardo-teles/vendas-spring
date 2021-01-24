@@ -1,0 +1,122 @@
+{"properties": [
+  {
+    "name": "security.jwt.expiracao",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.expiracao'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  },
+  {
+    "name": "security.jwt.chaveAssinatura",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.chaveAssinatura'"
+  }
+]}
