@@ -24,3 +24,10 @@ CREATE TABLE itens_pedido(
 	pedido_id INTEGER REFERENCES pedidos(id),
 	produto_id INTEGER REFERENCES produtos(id)
 );
+
+CREATE TABLE usuarios(
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+	login VARCHAR(50) NOT NULL,
+	senha VARCHAR(50) NOT NULL,
+	admin BOOLEAN DEFAULT FALSE
+);
